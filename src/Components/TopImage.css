@@ -1,0 +1,9 @@
+.picture{
+    height: 100%;
+    background-size: cover;
+    margin: 0vw 2vw 0vw 2vw ;
+    
+}
+.picture img{
+    width: 100%;
+}

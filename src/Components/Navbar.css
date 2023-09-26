@@ -1,5 +1,19 @@
 #na{
+    background-color: azure;
+    height: 5rem;
+    padding: 1.5rem 1.5rem 0.5rem 1.5rem;
     position: sticky;
     top: 0vh;
     z-index: 1001;
+
+    display: grid;
+    grid-template-columns: 4vw 28vw 7vw 11vw 20vw 13vw 11vw;
+}
+
+#na input{
+    height: 2.5rem;
+}
+
+.kul{
+    height: 2.5rem;
 }

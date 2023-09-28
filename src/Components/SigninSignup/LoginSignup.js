@@ -6,7 +6,7 @@ import Signup from "./Signup";
 import { BgSwitch } from "./SwitchContext";
 
 
-import {faRxCross1} from 'react-icons/fa';
+
 
 class LoginSignup extends React.Component {
   static contextType = BgSwitch;
@@ -36,7 +36,7 @@ class LoginSignup extends React.Component {
           
 
           <div className="header">
-          <faRxCross1 />
+          
             <button
               style={{
                 backgroundColor: bg_login,

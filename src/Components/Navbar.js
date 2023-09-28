@@ -37,10 +37,17 @@ class Navbar extends React.Component {
 
                     <h1 className = 'item2' style={{ display: 'inline-block' ,fontFamily: 'cursive', margin:'0.3rem'}}> VALIDOCKER</h1>
 
+                    <div>
 
+                    
                     <a  href='#root'><button className="ui secondary basic button item3">HOME</button></a>
+                    </div>
+                    <div>
                     <a  href='#ourServices'><button className="ui secondary basic button item4" >OUR SERVICES </button></a>
+                    </div>
+                    <div>
                     <a href='#aboutUs'><button className="ui secondary basic button item5" >ABOUT</button></a>
+                    </div>
                     <div className='ui icon input kul'>
                             <input type ='text' 
                             placeholder='search...'

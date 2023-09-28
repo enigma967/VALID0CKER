@@ -45,6 +45,8 @@
 .Profession{
     display: inline-block;
     margin-right: 5rem;
+    font-size: large;
+    font-weight: bold;
 }
 
 .Intro img{

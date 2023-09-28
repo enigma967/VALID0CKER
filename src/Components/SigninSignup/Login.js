@@ -38,9 +38,14 @@ class Login extends React.Component {
     }).then(response => {
       
       if(response.data.user){
+        const Username = response.data.user.Username;
+        const Card = response.data.user.AadharCard;
+
         console.log(response.data.user);
+        console.log(Username, Card);
+
         this.setState({authenticated: true});
-        this.props.handleAuth();
+        this.props.handleAuth(Username, Card);
         
         
       } else {
@@ -63,7 +68,7 @@ class Login extends React.Component {
 
     if(this.state.authenticated){
       return (
-        <Navigate to="/AfterLogin" />
+        <Navigate to="/DashBoard" />
       )
     }
 

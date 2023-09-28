@@ -1,11 +1,11 @@
 #na{
-    background-color: azure;
+    background-color: #DBDFEA ;
     height: 5rem;
     padding: 1.5rem 1.5rem 0.5rem 1.5rem;
     position: sticky;
     top: 0vh;
     z-index: 1001;
-
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,2);
     display: grid;
     grid-template-columns: 4vw 28vw 7vw 11vw 20vw 13vw 11vw;
 }
@@ -17,3 +17,4 @@
 .kul{
     height: 2.5rem;
 }
+  

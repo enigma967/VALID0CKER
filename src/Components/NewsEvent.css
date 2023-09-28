@@ -4,7 +4,6 @@
     height: 30rem;
     text-align: center;
     margin: 30px; 
-    
 }
 
 ul::-webkit-scrollbar {
@@ -18,7 +17,7 @@ ul{
     list-style-type: none;
     text-align: left;
     font-size: x-large;
-   overflow: auto;
+   overflow:auto;
    list-style: none;
    -ms-overflow-style:  none ;
    scrollbar-width: none;
@@ -31,4 +30,15 @@ ul{
     border-width: 2px ;
     border-color: black;
     padding: 1rem;
+}
+
+.NewsEvent:hover {
+    background-color:#DBDFEA ;
+}
+/* .hap h1 {
+    
+} */
+
+.NewsEvent {
+    background-color:bisque ;
 }

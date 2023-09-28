@@ -15,7 +15,7 @@ class About extends React.Component {
       <>
         <div style={{
           display: "flex",
-          flexDirection: "column", backgroundColor: "#AED2FF",
+          flexDirection: "column", backgroundColor:  " #B0D9B1 ",
           height:'fit-content',
           blockSize: 'fit-content'
         }}>
@@ -53,18 +53,24 @@ class About extends React.Component {
             </div>
             <div className="About">
               <h1>How to Sign in?</h1>
-              <p>
-                You Just required your Aadhar Card Number and Your Service ID
+              <p >
+                <b>You Just required your Aadhar Card Number and Your Service ID</b> 
               </p>
               <p>
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                Laboriosam sapiente quam ipsa animi, blanditiis ex eaque error
-                quaerat ipsam optio? Delectus reprehenderit consequuntur
-                expedita molestias corporis nisi nemo ad assumenda?
+                Click on the Sign In/Sign Up  button
+                <ol>
+                <li>Enter your Email.You can also use your Email as your Username. </li>
+                <li>Enter your Aadhar Card Number.</li>
+                <li>Choose your File which you want to upload.</li>
+                <li> Create your password .  </li>
+                <li>Please Confirm your password .</li>
+                <li>Click to   Submit button.</li>
+                 
+                </ol>
               </p>
               <a href="#root">
                 <button onClick={shown.displayChangeCall}>
-                SignIn <FaArrowAltCircleRight style={{ color: "yellow" }} />
+               <b>SignIn</b>   <FaArrowAltCircleRight style={{ color: " #B0D9B1" }} />
               </button>
               </a>
               

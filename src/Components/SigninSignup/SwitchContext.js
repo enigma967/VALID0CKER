@@ -19,6 +19,7 @@ class SwitchContext extends React.Component {
         type3: false,
       },
     };
+    
     this.changeBgLogin = this.changeBgLogin.bind(this);
     this.changeBgSignup = this.changeBgSignup.bind(this);
     this.changeToType1 = this.changeToType1.bind(this);
@@ -66,6 +67,8 @@ class SwitchContext extends React.Component {
       },
     });
   }
+
+
 
   render() {
     return (

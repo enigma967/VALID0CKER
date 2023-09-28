@@ -13,7 +13,6 @@ function importAll(r) {
 }
 const images = importAll(require.context('../assests/images/TopImages', false, /\.(png|jpe?g|svg)$/));
 
-console.log(images);
 
 const newImage=images.map((image_value)=>{
     return "<img src='" +image_value+  "'/>";
@@ -21,7 +20,7 @@ const newImage=images.map((image_value)=>{
 }
 )
 
-console.log(newImage);
+
 
 const responsive = {
     superLargeDesktop: {
@@ -77,6 +76,7 @@ class TopImage extends React.Component {
                     <img src={images[1]}/>
                     <img src={images[2]}/>
                     <img src={images[3]}/>
+                    <img src={images[4]}/>
 
                  
 

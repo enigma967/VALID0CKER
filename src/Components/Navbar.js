@@ -1,6 +1,6 @@
 import React from 'react';
 import './Navbar.css';
-import IsDisplay, { IsDisplayContext } from './IsDisplay';
+import  { IsDisplayContext } from './IsDisplay';
 import logo from '../assests/images/logo.png';
 import { FaSearch } from "react-icons/fa";
 
@@ -10,11 +10,9 @@ class Navbar extends React.Component {
     static contextType = IsDisplayContext;
     constructor(props) {
         super(props);
-        // this.state = {
-        // isdisplay: false,
-        // display: {
-        //     display: 'none'
-        // }
+        this.state = {
+            message: ''
+        }
 
     }
 
@@ -27,6 +25,7 @@ class Navbar extends React.Component {
 
     render() {
         let shown = this.context;
+       
 
         return (
 
@@ -50,7 +49,7 @@ class Navbar extends React.Component {
                             <i className='search icon'></i>
                         </div>
 
-                    <a><button className="ui secondary basic button item6" onClick={shown.displayChangeCall}>Sign In /Sing Up</button></a>
+                    <a ><button className="ui secondary basic button item6" style={{zIndex:'1005'}} onClick={shown.displayChangeCall} >Sign In /Sign Up</button></a>
 
 
 

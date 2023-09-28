@@ -1,12 +1,16 @@
 import React from "react";
 import "./AboutUs.css";
 import { FaArrowAltCircleRight } from "react-icons/fa";
+import { IsDisplayContext } from "./IsDisplay";
+
 class About extends React.Component {
+  static contextType= IsDisplayContext;
   constructor(props) {
     super(props);
     this.state = {};
   }
   render() {
+    let shown = this.context;
     return (
       <>
         <div style={{
@@ -58,9 +62,12 @@ class About extends React.Component {
                 quaerat ipsam optio? Delectus reprehenderit consequuntur
                 expedita molestias corporis nisi nemo ad assumenda?
               </p>
-              <button >
+              <a href="#root">
+                <button onClick={shown.displayChangeCall}>
                 SignIn <FaArrowAltCircleRight style={{ color: "yellow" }} />
               </button>
+              </a>
+              
             </div>
           </div>
           <div style={{ display: "flex", flexDirection: "row", paddingBottom: '10rem' }}>

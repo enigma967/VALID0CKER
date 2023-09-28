@@ -1,0 +1,66 @@
+.setting-container{
+    display: flex;
+    flex-direction: column;
+    line-height: 2rem;
+    background-color: #898db4;
+    margin-top: 1rem;
+    margin-left: 30%;
+    margin-right: 30%;
+    border-radius: 1rem;
+    box-shadow: 3px 3px 5px 1px #3a3b3f;
+    color: whitesmoke;
+}
+
+.form-container {
+    padding: 1rem;
+}
+
+.header {
+    padding-left: 10rem;
+    padding-top: 2rem;
+    padding-bottom: 3rem;
+}
+
+.profile-image {
+    line-height: 2rem;
+    display: flex;
+    flex-direction: row;
+}
+
+.profile-image img {
+    width: 10rem;
+    height: 10rem;
+    border-radius: 50%;
+    padding: 1rem;
+}
+
+.profile-image img:hover {
+    cursor: pointer; 
+}
+
+.profile-image h3 {
+    font-size: 1.1rem;
+    padding-top: 2rem;
+}
+.icon:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+    transition: 0.5s;
+    transition : all 0. ease-in-out;
+}
+
+.Name {
+    padding-left: 1rem;
+}
+
+.Name input {
+    border: none;
+    border-bottom: 2px solid #0f1111;
+    width: 18rem;
+    height: 1.5rem;
+    border-radius: 0.2rem;
+}
+
+.Bio {
+    margin-bottom: 1rem;
+}

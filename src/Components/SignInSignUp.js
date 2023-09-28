@@ -20,14 +20,12 @@ class SignInSignUp extends React.Component {
     render() {
 
         let TestShown = this.context;
-        console.log(TestShown);
         let show= TestShown.isdisplay? '':TestShown.display.display;
-        let opacity= TestShown.isdisplay? TestShown.display.opacity:'';
         return (
             <>
                 <div className ="login-container" style={{display: show}}>
                     <SwitchContext>
-                        <LoginSignup/>
+                        <LoginSignup handleAuth={this.props.handleAuth}/>
                     </SwitchContext>
                     
                 </div>

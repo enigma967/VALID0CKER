@@ -1,9 +1,12 @@
 // src/components/Login.js
-import React, { useState } from "react";
+import React from "react";
 import "./Login.css";
 import Login from "./Login";
 import Signup from "./Signup";
 import { BgSwitch } from "./SwitchContext";
+
+
+import {faRxCross1} from 'react-icons/fa';
 
 class LoginSignup extends React.Component {
   static contextType = BgSwitch;
@@ -12,11 +15,6 @@ class LoginSignup extends React.Component {
     super(props);
     this.state = {};
   }
-
-  handleLogin = () => {
-    // Implement your login logic here
-    console.log("Logging in with", this.state.email, this.state.password);
-  };
 
   render() {
     let con_val = this.context;
@@ -35,7 +33,10 @@ class LoginSignup extends React.Component {
 
     return (
         <div className="login-box">
+          
+
           <div className="header">
+          <faRxCross1 />
             <button
               style={{
                 backgroundColor: bg_login,
@@ -58,7 +59,7 @@ class LoginSignup extends React.Component {
             </button>
           </div>
           <div style={{ display: dis_login }}>
-            <Login />
+            <Login handleAuth={this.props.handleAuth}/>
           </div>
           <div style={{ display: dis_signup }}>
             <Signup />

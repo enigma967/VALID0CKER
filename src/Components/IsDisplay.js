@@ -11,7 +11,10 @@ class IsDisplay extends React.Component{
         isdisplay: false,
         display: {
             display: 'none',
-            opacity: "80%"
+            position: {
+                height : "100vh",
+                overflow : 'hidden'
+            },
         }
     }
     }

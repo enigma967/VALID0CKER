@@ -1,62 +1,84 @@
 import React from "react";
 import axios from "axios";
-var message='';
+
 class RegisterCitizen extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      Username:'',
-      AadharNumber:'',
-      AadharCard:'',
-      Password:''
+      Username: '',
+      AadharNumber: '',
+      AadharCard: '',
+      Password: '',
+      ConfirmPassword: '',
+      success: '',
+      message: ''
     };
-    
+
     this.onSubmitForm = this.onSubmitForm.bind(this);
+
+
   }
 
-  async onSubmitForm(event){
+
+
+  async onSubmitForm(event) {
     event.preventDefault();
-    const {Username,AadharNumber,AadharCard,Password} = this.state;
-    const data = new FormData();
-    data.append('Username',Username);
-    data.append('AadharNumber',AadharNumber);
-    data.append('AadharCard',AadharCard);
-    data.append('Password',Password);
-  
-    
 
-    await axios({
-      method: 'post',
-      url: 'http://localhost:8000/api/create-citizen',
-      data: data,
-      headers: {}
+    const { Username, AadharNumber, AadharCard, Password, ConfirmPassword } = this.state;
 
-    }).then(response => {
-      alert('You have successfully Registered')
-     
+    if (Password != ConfirmPassword) {
+      this.setState({ message: "Passwords do not match" });
 
-    }).catch(error => {
-      console.log(error);
-    });
+      // event.target.reset();
+    }
+    else {
 
-    event.target.reset();
 
+      this.setState({ message: '' });
+
+      const data = new FormData();
+      data.append('Username', Username);
+      data.append('AadharNumber', AadharNumber);
+      data.append('AadharCard', AadharCard);
+      data.append('Password', Password);
+
+
+
+      await axios({
+        method: 'post',
+        url: 'http://localhost:8000/api/create-citizen',
+        data: data,
+        headers: {}
+
+      }).then(response => {
+        this.setState({ success: 'You have successfully Registered' });
+
+
+
+      }).catch(error => {
+        console.log(error);
+      });
+
+
+
+      event.target.reset();
+    }
 
   }
 
   render() {
-    
+
     return (
       <div>
-        <div style={{textAlign: "center", color: 'green', position: "relative" }}>
-          <h1></h1>
+        <div style={{ textAlign: "center", color: 'green', position: "relative" }}>
+          <h3>{this.state.success}</h3>
         </div>
         <form onSubmit={this.onSubmitForm}>
           <div className="form-group">
             <label>Username</label>
             <input
               type="email"
-              onChange={(e) => this.setState({Username:e.target.value})}
+              onChange={(e) => this.setState({ Username: e.target.value })}
               required
               placeholder="Enter Your Email"
             />
@@ -66,8 +88,7 @@ class RegisterCitizen extends React.Component {
             <label>Aadhar Number</label>
             <input
               type="number"
-              value={this.state.password}
-              onChange={(e) => this.setState({AadharNumber:e.target.value})}
+              onChange={(e) => this.setState({ AadharNumber: e.target.value })}
               required
             />
           </div>
@@ -75,8 +96,7 @@ class RegisterCitizen extends React.Component {
             <label>Upload Your Aadhar</label>
             <input
               type="file"
-              value={this.state.password}
-              onChange={(e) => this.setState({AadharCard:e.target.files[0]})}
+              onChange={(e) => this.setState({ AadharCard: e.target.files[0] })}
               required
             />
           </div>
@@ -85,7 +105,8 @@ class RegisterCitizen extends React.Component {
             <input
               placeholder="Create your password"
               type="password"
-              onChange={(e) => this.setState({Password:e.target.value})}
+              onChange={(e) => this.setState({ Password: e.target.value })}
+
               required
             />
           </div>
@@ -94,9 +115,10 @@ class RegisterCitizen extends React.Component {
             <input
               placeholder="Confirm your password"
               type="password"
-              onChange={(e) => this.setState({PasswordConfirm:e.target.value})}
+              onChange={(e) => this.setState({ ConfirmPassword: e.target.value })}
               required
             />
+            <p style={{ textAlign: 'center', color: 'red' }}>{this.state.message}</p>
           </div>
 
           <button type="Submit">

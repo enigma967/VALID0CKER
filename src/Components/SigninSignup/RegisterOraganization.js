@@ -8,7 +8,10 @@ class RegisterOrganization extends React.Component {
       OrganisationName: '',
       OrganisationIdNo: '',
       OrganisationIdCard: '',
-      Password: ''
+      Password: '',
+      ConfirmPassword: '',
+      success: '',
+      message:''
 
     }
 
@@ -16,7 +19,15 @@ class RegisterOrganization extends React.Component {
   }
   async onSubmitForm(event) {
     event.preventDefault();
-    const { OrganisationName, OrganisationIdNo, OrganisationIdCard, Password } = this.state;
+    const { OrganisationName, OrganisationIdNo, OrganisationIdCard, Password , ConfirmPassword} = this.state;
+
+    if (Password != ConfirmPassword) {
+      this.setState({ message: "Passwords do not match" });
+      
+      // event.target.reset();
+    }
+    else {
+      this.setState({ message: "" });
     const data = new FormData();
     data.append('OrganisationName', OrganisationName);
     data.append('OrganisationIdNo', OrganisationIdNo);
@@ -32,7 +43,7 @@ class RegisterOrganization extends React.Component {
       headers: {}
 
     }).then(response => {
-      alert('You have successfully Registered')
+      this.setState({success:'You have successfully Registered'})
 
 
     }).catch(error => {
@@ -43,10 +54,14 @@ class RegisterOrganization extends React.Component {
 
 
   }
+  }
 
   render() {
     return (
       <div>
+        <div style={{textAlign: "center", color: 'green', position: "relative" }}>
+          <h3>{this.state.success}</h3>
+        </div>
         <form onSubmit={this.onSubmitForm}>
           <div className="form-group">
             <label>Organization Name</label>
@@ -90,10 +105,11 @@ class RegisterOrganization extends React.Component {
             <input
               placeholder="Confirm your password"
               type="password"
-              onChange={(e) => this.setState({ Password: e.target.value })}
+              onChange={(e) => this.setState({ ConfirmPassword: e.target.value })}
               required
             />
           </div>
+          <p style={{textAlign: 'center', color: 'red'}}>{this.state.message}</p>
 
           <button type="Submit" >
             Submit

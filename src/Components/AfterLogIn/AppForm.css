@@ -15,7 +15,11 @@
     padding: 1rem;
 }
 
+<<<<<<< HEAD
 .setting-container.header {
+=======
+.setting-container .header {
+>>>>>>> bd6a0b14a36913b06e4977061a37e95772c6ec76
     padding-left: 10rem;
     padding-top: 2rem;
     padding-bottom: 3rem;
